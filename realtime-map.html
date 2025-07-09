@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Map</title>
+    <link rel="stylesheet" href="realTime\realtime-map.css">
+    <!-- Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6VEy7ZU64dEHndoKutnmL7nWUYMtjmqw&callback=initMap" async defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">SmartTrack</div>
+        <nav>
+            <ul>
+                <li><a href="RouteOptimisation.html">Route Optimization</a></li>
+                <li><a href="trafficInsights.html">Traffic Insights</a></li>
+                <li><a href="realtime-map.html">Real-Time Map</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="getstarted.html" class="cta">Get Started</a>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <!-- Left Panel: Dropdown Menu for Route Images -->
+            <div id="control-panel">
+                <div class="feature" id="route-selection">
+                    <h2>Select Bus Route</h2>
+                    <select id="route-select">
+                        <option value="">-- Select a Route --</option>
+                        <option value="bus764">Bus 764</option>
+                        <option value="bus578">Bus 578</option>
+                        <option value="bus727">Bus 727</option>
+                        <option value="bus918">Bus 918</option>
+                    </select>
+                    <div id="route-image">
+                        <!-- Route images will be displayed here based on selection -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Live Location Feature and Map -->
+            <div id="map-container">
+                <div class="feature" id="live-location">
+                    <h2>Live Bus Location</h2>
+                    <p>Enter a bus route below to view its live location on the map:</p>
+                    <div class="input-group">
+                        <input type="text" id="bus-route-input" placeholder="Enter bus route">
+                        <button id="view-location-btn">Show Location</button>
+                    </div>
+                    <p id="live-location-status">Live location will be shown here once available.</p>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript File -->
+    <script src="realTime\realtime-map.js"></script>
+</body>
+</html>

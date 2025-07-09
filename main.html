@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- Responsive Meta Tag -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Adding Bootstrap CDN - Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- Adding Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- Adding CSS -->
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<style>
+		.track-my-bus{
+            background-color: #FEFAE0;
+		}
+	</style>
+	<title>redBus</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+		<div class="container">
+			<!-- Brand -->
+			<a class="navbar-brand" href="main.html"><img src="img/redbus_white.png" alt="redBus" width="60px"></a>
+
+			<!-- Toggler/collapsibe Button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-nav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar links -->
+			<div class="collapse navbar-collapse" id="menu-nav">
+				<!-- Left-aligned nav (default) -->
+				<div>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link text-white text-uppercase" href="main.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white text-uppercase" href="RouteOptimisation.html">Route Optimization</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white text-uppercase" href="trafficInsights.html">Traffic Analytics</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white text-uppercase" href="realtime-map.html">Real Time Map</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white text-uppercase" href="contact.html">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white text-uppercase" href="about.html">About</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Right-aligned nav -->
+				<div class="collapse navbar-collapse justify-content-end" id="menu-nav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link text-white" href="#">Help</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+								Manage Booking
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">Link 1</a>
+								<a class="dropdown-item" href="#">Link 2</a>
+								<a class="dropdown-item" href="#">Link 3</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+								<i class="fas fa-user-circle"></i>
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">Sign In/Sign Up</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<!-- Main Home Banner and Input Search Container -->
+	<div class="position-relative">
+		<div>
+			<div class="home-banner"></div>
+		</div>
+
+		<div class="input-search-container">
+			<form class="d-flex justify-content-center">
+				<div class="d-inline-block position-relative">
+					<span class="inputIcon"><i class="far fa-building"></i></span>
+					<label class="inputLabel-default" for="input-label-from">FROM</label>
+					<input id="input-label-from" class="inputForm" type="text" list="input-from-list">
+					<datalist id="input-from-list">
+						<option value="Hari Nagar Clock Tower"></option>
+						<option value="Nehru Vihar"></option>
+						<option value="Nathupura Crossing Terminal"></option>
+						<option value="BBM Cluster Depot"></option>
+						<option value="Kendriya Terminal"></option>
+						<option value="BBM Cluster Depot"></option>
+						<option value="Harsh Vihar"></option>
+						<option value="BBM Cluster Depot"></option>
+						<option value="Inderpuri Krishi Kunj"></option>
+						<option value="Pandwala Village"></option>
+						<option value="JanakPuri B-1 Terminal"></option>
+						<option value="Mangla Puri Termina"></option>
+						<option value="Bharthal Village (Shyam Mandir)"></option>
+						<option value="Dichaon Kalan Depot"></option>
+						<option value="Old Delhi Railway Station"></option>
+						<option value="Mori Gate Terminal"></option>
+						<option value="Shahdara (Shyam Lal College)"></option>
+						<option value="Kendriya Terminal"></option>
+						<option value="Okhla Extension (Abul Fazal Enclave)"></option>
+						<option value="Ambedkar Nagar Terminal"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="Inder Puri JJ Colony"></option>
+						<option value="Okhla Depot IV CWS II"></option>
+						<option value="Kendriya Terminal"></option>
+						<option value="Hamdard Nagar / Sangam Vihar"></option>
+						<option value="Badarpur Border"></option>
+						<option value="Okhla Depot IV CWS II"></option>
+						<option value="New Delhi Railway Station Gate 2"></option>
+						<option value="IGI Airport Terminal 2 (Air India Office)"></option>
+						<option value="Sai Baba Mandir (Najafgarh)"></option>
+						<option value="Nizamuddin Railway Station"></option>
+						<option value="Kendriya Terminal"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="Anand Parvat Terminal"></option>
+						<option value="Qamruddin Nagar Terminal"></option>
+						<option value="Nand Nagri Terminal"></option>
+						<option value="Rajghat Cluster Depot"></option>
+						<option value="Pushp Vihar"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="Shivaji Stadium Terminal"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="H-3 Vikas Puri"></option>
+						<option value="Anand Vihar ISBT"></option>
+						<option value="Dilshad Garden Depot Cluster"></option>
+						<option value="Karampura Terminal"></option>
+						<option value="Jheel Terminal"></option>
+						<option value="Hari Nagar Clock Tower"></option>
+						<option value="New Seema Puri Depot Cluster"></option>
+						<option value="Q-Block Mangolpur"></option>
+						<option value="Shivaji Stadium Terminal"></option>
+						<option value="Nizamuddin Railway Station"></option>
+						<option value="New Seema Puri Depot Cluster"></option>
+						<option value="JLN Marg"></option>
+						<option value="ISBT Kashmere Gate Terminal"></option>
+						<option value="ISBT Kashmere Gate Terminal"></option>
+						<option value="Dwarka Mor Metro Station (Terminal)"></option>
+						<option value="New Delhi Railway Station Gate No.2"></option>
+						
+					</datalist>
+				</div>
+
+				<div class="d-inline-block position-relative">
+					<span class="inputIcon"><i class="far fa-building"></i></span>
+					<label class="inputLabel-default" for="input-label-to">TO</label>
+					<input id="input-label-to" class="inputForm" type="text" list="input-to-list">
+					<datalist id="input-to-list">
+						<option value="PS Kirti Nagar"></option>
+						<option value="GTB Nagar / Haqiqat Nagar"></option>
+						<option value="Sant Nagar Main Market"></option>
+						<option value="IP College"></option>
+						<option value="CV Raman ITI	"></option>
+						<option value="JLN Marg"></option>
+						<option value="B-Block Yamuna Vihar"></option>
+						<option value="B-Block Yamuna Vihar"></option>
+						<option value="Kalyan Vihar Terminal"></option>
+						<option value="Campa Cola"></option>
+						<option value="BSF Camp Chhawla"></option>
+						<option value="Desu Colony"></option>
+						<option value="Geeta Ashram"></option>
+						<option value="The Uppal Hotel"></option>
+						<option value="Deenpur Village"></option>
+						<option value="ITPO Gate No. 3"></option>
+						<option value="Delhi Gate"></option>
+						<option value="Apollo Hospital"></option>
+						<option value="Radheypuri"></option>
+						<option value="Sunehri Masjid/ G Block"></option>
+						<option value="Ansari Health Care"></option>
+						<option value="PT College Kotla"></option>
+						<option value="South Patel Nagar (Metro Station)"></option>
+						<option value="Sunehri Masjid/ G Block"></option>
+						<option value="Vocational College"></option>
+						<option value="Tughlakabad Village"></option>
+						<option value="Kalkaji Mandir (MaaAnandmayeeMarg)"></option>
+						<option value="Krishan Menon Marg"></option>
+						<option value="ISIC Hospital (Verma farm)r"></option>
+						<option value="NSIT (Netaji Subhas Institute)"></option>
+						<option value="Central School Lodhi Colony"></option>
+						<option value="Gole Market"></option>
+						<option value="GTB Hospital"></option>
+						<option value="Azad Market"></option>
+						<option value="Peera Garhi Chowk"></option>
+						<option value="C 4 Yamuna Vihar"></option>
+						<option value="Police Station Paharganj"></option>
+						<option value="Defence Colony"></option>
+						<option value="Nirman Vihar"></option>
+						<option value="Neethi Apartment"></option>
+						<option value="Rajendra Place / Karol Bagh Telephone Exchange"></option>
+						<option value="Dholi Piao"></option>
+						<option value="Arjun Nagar"></option>
+						<option value="GTB Hospital Xing"></option>
+						<option value="Karol Bagh Metro Station"></option>
+						<option value="Delhi Secretariat"></option>
+						<option value="Payal Cinema"></option>
+						<option value="GTB Hospital Crossing"></option>
+						<option value="Nirman Vihar"></option>
+						<option value="Rohini Sec-3/4 Xing"></option>
+						<option value="Rajendra Place / Karol Bagh Telephone Exchange"></option>
+						<option value="Bharti Nagar	"></option>
+						<option value="Mansarovar Park Metro Station"></option>
+						<option value="Red Fort"></option>
+						<option value="ITO"></option>
+						<option value="Faiz Roadr"></option>
+						<option value="Raja Puri"></option>
+						<option value="Lado Sarai"></option>
+						
+						
+					</datalist>
+				</div>
+
+				<div class="d-inline-block position-relative">
+					<span class="inputIcon"><i class="fas fa-calendar-alt"></i></span>
+					<label class="inputLabel-default" for="input-label-onward-date">ONWARD DATE</label>
+					<input id="input-label-onward-date" class="inputForm" type="text">
+				</div>
+
+				<div class="d-inline-block position-relative">
+					<span class="inputIcon"><i class="fas fa-calendar-alt"></i></span>
+					<label class="inputLabel-default" for="input-label-return-date">RETURN DATE</label>
+					<input id="input-label-return-date" class="inputForm" type="text">
+				</div>
+
+				<div class="d-inline-block position-relative">
+					<input class="btn btn-danger rounded-0 pl-3 pr-3 pb-2" type="submit" value="Search Buses">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Coupons Container -->
+	<div class="position-relative">
+		<div class="holiday-coupon-container bg-white p-2 shadow">
+			<div class="float-left mr-4 ml-4">
+				<img src="img/holiday.png" alt="holiday_coupon">
+			</div>
+
+			<div class="d-table-cell align-middle pl-2">
+				<div class="lead font-weight-bold">Avoid Overcrowding</div>
+				<div class="text-muted"><b>Our smart scheduling reduces bus overcrowding, ensuring a more comfortable trip.</b></div>
+
+			</div>
+		</div>
+	</div>
+
+	<style>
+		.coupon-image {
+		  max-width: 100%;  /* Ensures the image will scale to fit within its container */
+		  height: auto;    /* Maintains the aspect ratio */
+		  width: 200px;    /* Sets a specific width (you can adjust this value as needed) */
+		}
+	  </style>
+
+	<!-- Cashback Container -->
+	 
+    <div class="cashback-container d-flex justify-content-center bg-light mb-5 pb-5 pt-5">
+    <div class="text-center bg-white shadow m-3 p-2 pl-5 pr-5 mt-5">
+        <div class="text-muted font-weight-bold small">Travel on DTC buses</div>
+        <div class="image-wrapper">
+            <img src="img/bus.png" alt="bus" class="img-responsive">
+        </div>
+        <div class="text-muted small"><b>Free Travel</b></div>
+        <div class="font-weight-normal"><b>Enjoy free rides on all DTC buses.</b></div>
+    </div>
+
+    <div class="text-center bg-white shadow m-3 p-2 pl-5 pr-5 mt-5">
+        <div class="text-muted font-weight-bold small">Free Travel on your favourite destination</div>
+        <div class="image-wrapper">
+            <img src="img/holiday_cashback.png" alt="holiday_cashback" class="img-responsive">
+        </div>
+        <div class="text-muted small"><b>Enjoy complimentary rides on DTC buses to your favorite holiday destinations.</b></div>
+        <div class="font-weight-normal"><b>Affordable and economical travel to your holiday hotspots.</b></div>
+    </div>
+
+    <div class="text-center bg-white shadow m-3 p-2 pl-5 pr-5 mt-5">
+        <div class="text-muted font-weight-bold small">Enjoy comfortable ride.</div>
+        <div class="image-wrapper">
+            <img src="img/amazon.png" alt="amazon" class="img-responsive">
+        </div>
+        <div class="text-muted small"><b>Minimal Waiting Time</b></div>
+        <div class="font-weight-normal"><b>Experience shorter wait times with optimized bus schedules.</b></div>
+    </div>
+</div>
+
+		
+
+	<!-- Introducing On-Time Guarantee Container -->
+	<div class="on-time-guarantee d-flex mt-5 mb-5 p-4 border">
+		<div class="pr-4">
+			<img src="img/hero_ontime.png" alt="hero_ontime" width="80px">
+		</div>
+
+		<div>
+			<div>
+				<h2>Introducing On-Time Guarantee</h2>
+				<h4 class="text-muted font-weight-normal">Leave on time, everytime</h4>
+			</div>
+
+			<div class="d-flex pt-4 pb-4">
+				<p class="font-weight-light mr-3"><span><img src="img/tip-icon.png" height="23"></span> Look for the On-Time Guarantee tag on DTC buses to ensure a punctual journey.</p>
+				<p class="mr-3"><img src="img/otgText.png"></p>
+				<p class="font-weight-light mr-3">tag while booking your journey</p>
+			</div>
+
+			<div class="d-flex">
+				<div>
+					<h5 class="text-primary">Bus on time</h5>
+					<div class="font-weight-bold">Get real-time updates on bus departures and arrivals directly through our integration with Google Maps.
+					</div>
+					<div class="text-muted"> bus departure from boarding point.</div>
+				</div>
+
+				<div>
+					<h5 class="text-primary">No bus cancellation</h5>
+					<div class="font-weight-bold">Stay informed with live notifications in case of any cancellations, ensuring you’re always updated about your journey</div>
+					<div class="text-muted">Timely notification alerts</div>
+				</div>
+
+				<div>
+					<h5 class="text-primary">Alternate assurance</h5>
+					<div class="font-weight-bold">Receive timely notifications if there’s a breakdown or any issue with alternate arrangements, keeping you well-informed.</div>
+					<div class="text-muted">Timely alerts on any circumstances.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Track My Bus - Smarter Way To Travel Container -->
+	<div class="track-my-bus bg-light p-4 mb-5 pb-5">
+		<div class="mb-5">
+			<div class="float-left mr-5 ml-5">
+				<img src="img/tmb_img.png" alt="tmb_img">
+			</div>
+
+			<div class="d-table-cell align-middle pl-5 pr-5">
+				<h3>TRACK MY BUS - Smarter Way To Travel</h3>
+				<p class="text-muted">Track your bus with our ‘Track My Bus’ feature and know the exact location in real-time.Stay informed and keep your family informed!</p>
+				<button class="btn btn-light btn-outline-danger">Know More</button>
+			</div>
+		</div>
+
+		<hr class="w-75 border">
+
+		<div class="d-flex justify-content-around p-5">
+			<div class="text-center">
+				<div class="lead text-muted font-weight-normal">BUSES</div>
+				<h1 class="text-danger">10,000</h1>
+				<div class="text-muted">Total buses currently being tracked</div>
+			</div>
+
+			<div class="text-center">
+				<div class="lead text-muted font-weight-normal">ROUTES</div>
+				<h1 class="text-danger">60,000</h1>
+				<div class="text-muted">Total routes covered by live tracking</div>
+			</div>
+
+			<div class="text-center">
+				<div class="lead text-muted font-weight-normal">USERS</div>
+				<h1 class="text-danger">40,000</h1>
+				<div class="text-muted">Total users using Track My Bus feature</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Convenience On-The-Go IOS/Android Container -->
+	<div class="ios-android-container position-relative mb-5">
+		<div>		<!-- Background Image Container -->
+			<div class="d-flex justify-content-around">
+				<div class="pt-4">
+					<h3>CONVENIENCE ON-THE-GO.</h3>
+					<div class="w-75">
+						<p class="text-dark small">Exclusive features on our website include:</p>
+						<p class="text-dark small">DTC NOW – Need a bus in the next couple of hours? Track and board a DTC bus heading your way with ease.</p>
+						<p class="text-dark small">Boarding Point Navigation – Never lose your way to your boarding point with precise navigation directions.</p>
+						<p class="text-dark small">Real-Time Updates – Stay informed with live updates on bus arrival times and route changes to plan your journey better.</p>
+						<p class="text-dark small">Visit Our Website</p>
+						<p class="text-dark small">For these features and more, visit our website at [https://dtc.delhi.gov.in](https://dtc.delhi.gov.in)/p>
+						<!-- SMS me the link -->
+						<form class="form-inline">
+							<select class="form-control form-control-sm mr-2 mb-2">
+								<option>+91</option>
+							</select>
+							<input class="form-control form-control-sm mr-2 mb-2 w-50" type="text" placeholder="Enter your mobile number">
+							<button class="btn btn-outline-danger btn-sm mb-2" type="submit">SMS ME THE LINK</button>
+						</form>
+						<!-- Download redBus Application -->
+						<button class="btn btn-dark rounded-circle mr-2"><i class="fab fa-apple"></i></button>
+						<button class="btn btn-dark rounded-circle"><i class="fab fa-google-play"></i></button>
+					</div>
+				</div>
+
+				<div>
+					<img src="img/IOS_Android_device.png" alt="IOS_Android_device" width="420">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- We Promise To Deliver Container -->
+	<div class="we-promise-container bg-light p-3 pb-5">
+		<div class="text-center m-4">
+			<img src="img/promise.png" alt="promise" width="85">
+			<h2 class="text-dark m-2">WE PROMISE TO DELIVER</h2>
+		</div>
+
+		<div class="text-center d-flex">
+			<div class="border bg-white w-25">
+				<div class="p-4"><img src="img/maximum_choices.png" alt="maximum_choices" width="120"></div>
+				<div class="mb-5 m-4 font-weight-light lead">REAL-TIME EFFICIENCY</div>
+				<div class="m-4 p-1 text-muted">Our dynamic route rationalization model ensures optimized bus routes based on real-time traffic and road conditions, minimizing delays and improving punctuality.</div>
+			</div>
+
+			<div class="border bg-white w-25">
+				<div class="p-4"><img src="img/customer_care.png" alt="customer_care" width="91"></div>
+				<div class="mb-5 mt-4 font-weight-light lead">SMART AUTOMATION</div>
+				<div class="m-4 p-1 text-muted">Leveraging advanced machine learning and AI, we provide intelligent solutions for adjusting bus routes dynamically, preventing bunching and ensuring smooth operations.</div>
+			</div>
+
+			<div class="border bg-white w-25">
+				<div class="p-4"><img src="img/lowest_Fare.png" alt="lowest_Fare" width="120"></div>
+				<div class="mb-5 mt-4 font-weight-light lead">SEAMLESS INTEGRATION</div>
+				<div class="m-4 p-1 text-muted">Our system integrates real-time data seamlessly, offering a robust solution to adapt routes and schedules to current traffic conditions, enhancing overall service efficiency.</div>
+			</div>
+
+			<div class="border bg-white w-25">
+				<div class="p-4"><img src="img/benefits.png" alt="benefits" width="120"></div>
+				<div class="mb-5 mt-4 font-weight-light lead">ENHANCED PASSENGER EXPERIENCE</div>
+				<div class="m-4 p-1 text-muted">We deliver a superior travel experience by reducing wait times and ensuring reliable bus services through innovative and effective route management.</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Adding jQuery library CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Adding Bootstrap CDN - Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!-- Adding Bootstrap CDN - Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- Adding JavaScript -->
+	<script type="text/javascript" src="js/app.js"></script>
+	<footer class="footer footer-light-theme">
+      <div class="footer-top ">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                  <div class="inner-column tab-mb-25">
+                    <div class="region region-footer-left">
+    <nav role="navigation" aria-labelledby="block-dtcfootermenu-menu" id="block-dtcfootermenu" class="block block-menu navigation menu--dtc-footer-menu">
+      
+  <h2 id="block-dtcfootermenu-menu">Quick Links</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/dtc/accessibility-statement" data-drupal-link-system-path="node/1840" style="font-size: 14px;">Accessibility Statement</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/copyright-policy" data-drupal-link-system-path="node/1855" style="font-size: 14px;">Copyright Policy</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/disclaimer" data-drupal-link-system-path="node/1856" style="font-size: 14px;">Disclaimer</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/feedback" data-drupal-link-system-path="node/42610" style="font-size: 14px;">Feedback</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/hyperlink-policy" data-drupal-link-system-path="node/1841" style="font-size: 14px;">Hyperlink Policy</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/privacy-policy" data-drupal-link-system-path="node/1843" style="font-size: 14px;">Privacy Policy</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/terms-conditions" data-drupal-link-system-path="node/1845" style="font-size: 14px;">Terms &amp; Conditions</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/terms-use" data-drupal-link-system-path="node/1848" style="font-size: 14px;">Terms of Use</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/security-policy" data-drupal-link-system-path="node/1849" style="font-size: 14px;">Security Policy</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dtc/help" data-drupal-link-system-path="node/1853" style="font-size: 14px;">Help</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+                  </div>
+               </div>
+              
+               <div class="col-sm-12 col-md-6 col-lg-4 ">
+                  <div class="inner-column tab-mb-25">
+                       <div class="region region-footer-centre">
+    <div id="block-addressofdtc" class="block block-block-content block-block-content098eff2d-4f32-4728-83af-2ed292453fa2">
+  
+      <h2>Address</h2>
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><ul class="contact_details">
+	<li><i class="fas fa-map-marker-alt">&nbsp;</i> Delhi Transport Corporation (HQ),<br>
+	Government of National Capital Territory of Delhi,<br>
+	I.P. Estate: New Delhi-110002</li>
+	<li><i class="fas fa-phone">&nbsp;</i> +91-11-23370236</li>
+</ul>
+</div>
+      
+  </div>
+
+  </div>
+
+                  </div>
+               </div>
+               <div class="col-sm-12 col-md-6 col-lg-4">
+                  <div class="inner-column tab-mb-25">
+                      <div class="region region-footer-right">
+    <div id="block-locationofdtc" class="block block-block-content block-block-content3fda0b55-c47b-448d-908f-f081f36bba7a">
+  
+      <h2>Map of Department of Delhi Transport Corporation</h2>
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><iframe allowfullscreen="" height="230" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112098.8413533434!2d77.23432073402564!3d28.597112958926918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce32e8997a051%3A0x5fe3a01f4010b134!2sDelhi%20Transport%20Corporation%20Indraprashtha%20Depot%20-%20IP%20Estate!5e0!3m2!1sen!2sin!4v1662536335943!5m2!1sen!2sin" style="border:0;"></iframe></p>
+</div>
+      
+  </div>
+
+  </div>
+
+                 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+       <div class="footer-bottom text-center">
+         <div class="container">
+            <div class="row footer-border">
+             <div class="col-md-7 copyright">
+             <!-- <div class="col-md-12">   -->
+                  <div class="region region-footer-bottom">
+    <div id="block-dit-dtc-copyright" class="block block-block-content block-block-contentb582e16d-f9ae-4d6b-aac4-3091cc3bc874">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Copyright © <script>document.write(new Date().getFullYear())</script>2024 - All Right Reserved - Official Website of Government of National Capital Territory of Delhi, India.</p>
+</div>
+      
+  </div>
+
+  </div>
+
+             </div>
+            <div class="col-md-5 site_info">  
+            <ul>
+               <li><div class="last_updated"><div class="views-element-container"><div class="view view-last-updated-date view-id-last_updated_date view-display-id-block_1 js-view-dom-id-59b53c4cfaf0588f81070bdba53839ca05115cbb57d74c9757bf0809fb27b7f7">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-changed"><span class="field-content">Last Updated: <time datetime="2024-08-23T17:50:38+05:30" class="datetime">23/08/2024</time>
+</span></div></div>
+
+    </div>
+  
+          </div>
+</div>
+</div></li>
+               <li><div class="total_visitors"><div class="block block-custom-visitors-aks block-custom-visitors-aks-block">
+  
+    
+      Total Visitors: 977385
+
+
+
+  </div>
+</div></li>
+            </ul>  
+            </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+</body>
+</html>

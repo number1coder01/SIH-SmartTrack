@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+    <link rel="stylesheet" href="GetStarted\getStarted.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="logo">SmartTrack</div>
+        <nav>
+            <ul>
+                <li><a href="RouteOptimisation.html">Route Optimization</a></li>
+                <li><a href="trafficInsights.html">Traffic Analytics</a></li>
+                <li><a href="realtime-map.html">Real-Time Map</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="getstarted.html" class="cta">Get Started</a>
+    </header>
+    
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Get Started - Enter Your Details</h2>
+        <form id="userForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script src="GetStarted\formScripted.js"></script>
+</body>
+</html>

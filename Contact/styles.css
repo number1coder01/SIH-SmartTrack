@@ -1,0 +1,119 @@
+/* Global Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F7FFF7;
+    color: #4E4E4E;
+}
+
+nav ul.navbar {
+    list-style: none;
+    background-color: #1A535C;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul.navbar li a:hover {
+    color: #FF6B6B;
+}
+
+.contact-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact-section h1 {
+    color: #1A535C;
+    font-size: 2.5rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #1A535C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+form button:hover {
+    background-color: #FF6B6B;
+}
+
+/* Contact Info Section */
+.contact-info {
+    padding: 50px;
+    background-color: #BEDC74;
+    text-align: center;
+}
+
+.contact-info h2 {
+    color: #1A535C;
+    font-size: 2rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #4E4E4E;
+}
+
+.social-media {
+    margin-top: 40px;
+}
+
+.social-media h3 {
+    color: #FF6B6B;
+    font-size: 1.5rem;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 10px;
+    color: #1A535C;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #FF6B6B;
+}

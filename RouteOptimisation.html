@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Optimization</title>
+    <link rel="stylesheet" href="location\styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">SmartTrack</div>
+        <nav>
+            <ul>
+                <li><a href="routeOptimization.html">Route Optimization</a></li>
+                <li><a href="trafficInsights.html">Traffic Insights</a></li>
+                <li><a href="realtime-map.html">Real-Time Map</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="getstarted.html" class="cta">Get Started</a>
+    </header>
+
+    <!-- Route Finder Content -->
+    <div class="container">
+        <h1>Route Finder</h1>
+        <form id="route-form">
+            <label for="start">Start:</label>
+            <input type="text" id="start" placeholder="Enter start location" required>
+            
+            <label for="end">End:</label>
+            <input type="text" id="end" placeholder="Enter end location" required>
+            
+            <button type="submit">Find Route</button>
+        </form>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="location\app.js"></script>
+</body>
+</html>

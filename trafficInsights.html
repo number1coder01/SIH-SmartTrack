@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Insights - SmartTrack</title>
+    <link rel="stylesheet" href="trafficInsights\trafficInsights.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Adding Chart.js for graphs -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">SmartTrack</div>
+        <nav>
+            <ul>
+                <li><a href="location\RouteOptimisation.html">Route Optimization</a></li>
+                <li><a href="trafficInsights.html">Traffic Analytics</a></li>
+                <li><a href="realTime\realtime-map.html">Real-Time Map</a></li>
+                <li><a href="Contact\contact.html">Contact</a></li>
+                <li><a href="About\about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="getstarted.html" class="cta">Get Started</a>
+    </header>
+
+    <!-- Traffic Insights Section -->
+    <section class="traffic-insights">
+        <h1>Traffic Insights</h1>
+        <p>Analyze real-time and historical traffic data with machine learning predictions for optimized bus routes.</p>
+
+        <!-- Charts Section -->
+        <div class="charts-container">
+            <div class="chart-item">
+                <h2>Current Traffic Flow</h2>
+                <canvas id="currentTrafficChart"></canvas>
+            </div>
+
+            <div class="chart-item">
+                <h2>Historical Traffic Data</h2>
+                <canvas id="historicalTrafficChart"></canvas>
+            </div>
+
+            <div class="chart-item">
+                <h2>Congestion Predictions</h2>
+                <canvas id="congestionPredictionChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <script src="trafficInsights\trafficInsights.js"></script>
+</body>
+</html>

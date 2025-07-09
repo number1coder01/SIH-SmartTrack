@@ -1,0 +1,136 @@
+/* Global Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #9ef66b; /* Palette Color */
+    color: #333333;
+}
+
+header {
+    background-color: #387F39; /* Palette Color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #F6E96B; /* Palette Color */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #BEDC74; /* Palette Color */
+    border-radius: 5px;
+}
+
+.cta {
+    background-color: #A2CA71; /* Palette Color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #F6E96B; /* Palette Color */
+    color: #387F39; /* Palette Color */
+}
+
+/* Traffic Insights Section */
+.traffic-insights {
+    padding: 40px 20px;
+    background-color: #E0F8E0; /* Palette Color */
+    text-align: center;
+}
+
+.traffic-insights h1 {
+    font-size: 2.5rem;
+    color: #387F39; /* Palette Color */
+    margin-bottom: 10px;
+}
+
+.traffic-insights p {
+    font-size: 1.2rem;
+    font-weight: bold; /* Bold Data Text */
+    color: #666666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Charts Section */
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 40px;
+}
+
+.chart-item {
+    background-color: #E0F8E0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 30%; /* Equal Flex Basis for All Charts */
+    text-align: center;
+}
+
+.chart-item h2 {
+    font-size: 1.6rem;
+    color: #387F39; /* Palette Color */
+    margin-bottom: 20px;
+}
+
+/* Specific style for the third (pie) chart */
+.chart-item:nth-child(3) canvas {
+    width: 50%; /* Further reduce the width of the pie chart */
+    height: 200px; /* Further reduce the height of the pie chart */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .charts-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .chart-item {
+        flex: 1 1 100%;
+    }
+
+    .traffic-insights h1 {
+        font-size: 2rem;
+    }
+
+    .traffic-insights p {
+        font-size: 1rem;
+    }
+
+    canvas {
+        height: auto; /* Allow responsive height on smaller screens */
+    }
+}
